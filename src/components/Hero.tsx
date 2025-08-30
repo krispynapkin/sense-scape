@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { Play, Star, Users, Award } from "lucide-react";
-import heroImage from "@/assets/hero-blocks.jpg";
 
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
@@ -13,7 +12,7 @@ const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-hero"></div>
+      <div className="absolute inset-0 bg-[#2A9D8F]"></div>
       
       {/* Floating Elements */}
       <div className="absolute top-20 left-10 w-16 h-16 bg-brand-orange/20 rounded-full blur-xl float-animation"></div>
@@ -32,7 +31,7 @@ const Hero = () => {
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
               <span className="text-background">Build Dreams with</span>
               <br />
-              <span className="gradient-text">Blocky Buddy</span>
+              <span className="text-background">Blocky Buddy</span>
             </h1>
             
             <p className="text-lg md:text-xl text-background/90 mb-8 max-w-2xl">
@@ -74,26 +73,16 @@ const Hero = () => {
 
           {/* Hero Image */}
           <div className="relative">
-            <div className="relative z-10 float-animation">
-              <img 
-                src={heroImage} 
-                alt="Colorful Blocky Buddy building blocks arranged in elephant shapes" 
-                className="w-full h-auto rounded-2xl shadow-strong"
-              />
-            </div>
-            
-            {/* Decorative Elements */}
-            <div className="absolute -top-4 -right-4 w-full h-full bg-gradient-primary opacity-20 rounded-2xl blur-xl"></div>
+            <img 
+              src="/images/hero/cutout.png" 
+              alt="Colorful Blocky Buddy building blocks arranged in elephant shapes" 
+              className="w-full h-auto"
+            />
           </div>
         </div>
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-background/50 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-background/70 rounded-full mt-2"></div>
-        </div>
-      </div>
     </section>
   );
 };
