@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Star, Quote, School, Users } from "lucide-react";
 
 const Reviews = () => {
@@ -86,8 +87,8 @@ const Reviews = () => {
             <span className="text-sm font-medium text-brand-forest">Teacher Reviews</span>
           </div>
           
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            <span className="gradient-text">Loved by Educators</span>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6" style={{ color: '#3f5971' }}>
+            Loved by Educators
           </h2>
           
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -159,19 +160,19 @@ const Reviews = () => {
 
         {/* CTA */}
         <div className="text-center mt-16">
-          <div className="bg-gradient-hero rounded-2xl p-8 shadow-medium">
+          <div className="rounded-2xl p-8 shadow-medium" style={{backgroundColor: '#264653'}}>
             <h3 className="text-2xl font-bold text-background mb-4">Join Thousands of Happy Educators</h3>
             <p className="text-background/90 mb-6 max-w-2xl mx-auto">
               Experience the difference Blocky Buddy Blocks can make in your classroom. 
               Start building brighter futures today!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-background text-brand-forest px-8 py-3 rounded-lg font-semibold hover:bg-background/90 transition-colors shadow-soft">
+              <Button variant="hero">
                 Request Free Sample
-              </button>
-              <button className="border-2 border-background text-background px-8 py-3 rounded-lg font-semibold hover:bg-background hover:text-brand-forest transition-colors">
+              </Button>
+              <Button variant="hero">
                 Schedule Demo
-              </button>
+              </Button>
             </div>
           </div>
         </div>

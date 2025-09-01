@@ -80,13 +80,12 @@ const Contact = () => {
             <span className="text-sm font-medium text-brand-forest">Get in Touch</span>
           </div>
           
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            <span className="gradient-text">Let's Start Building Together</span>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6" style={{ color: '#3f5971' }}>
+            Let’s Build Spaces That Inspire Wonder.
           </h2>
           
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Have questions about our products? Need help choosing the right set for your classroom? 
-            Want to become a partner school? We'd love to hear from you!
+            Whether you’re a school leader looking to transform classrooms, a parent curious about our learning resources, or an educator seeking guidance, we’d love to hear from you. Fill out the form below and let’s start creating environments that spark curiosity, imagination, and lifelong learning.
           </p>
         </div>
 
@@ -177,27 +176,23 @@ const Contact = () => {
           <div className="space-y-6">
             <Card className="bg-gradient-hero border-0 text-background">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-4">Why Choose Blocky Buddy?</h3>
+                <h3 className="text-2xl font-bold mb-4">Why Choose SenseScape?</h3>
                 <ul className="space-y-3">
                   <li className="flex items-center">
                     <div className="w-2 h-2 bg-background rounded-full mr-3"></div>
-                    Award-winning educational design
+                    Enhances parent perception & school admissions.
                   </li>
                   <li className="flex items-center">
                     <div className="w-2 h-2 bg-background rounded-full mr-3"></div>
-                    Trusted by 10,000+ schools worldwide
+                    Creates unique, high-quality environments that set your school apart.
                   </li>
                   <li className="flex items-center">
                     <div className="w-2 h-2 bg-background rounded-full mr-3"></div>
-                    Free shipping on orders over $50
+                    Supports multiple areas of child development through sensory, play-based learning.
                   </li>
                   <li className="flex items-center">
                     <div className="w-2 h-2 bg-background rounded-full mr-3"></div>
-                    30-day money-back guarantee
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-background rounded-full mr-3"></div>
-                    Dedicated educational support team
+                    Offers a one-stop solution for materials, training, and consultancy.
                   </li>
                 </ul>
               </CardContent>
@@ -225,10 +220,10 @@ const Contact = () => {
 
             {/* Quick Actions */}
             <div className="space-y-4">
-              <Button variant="play" size="lg" className="w-full">
+              <Button variant="hero" size="lg" className="w-full">
                 Download Product Catalog
               </Button>
-              <Button variant="learn" size="lg" className="w-full">
+              <Button variant="hero" size="lg" className="w-full">
                 Schedule Virtual Demo
               </Button>
             </div>

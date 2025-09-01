@@ -6,6 +6,7 @@ import Reviews from "@/components/Reviews";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import BodyText from "@/components/BodyText";
 
 const Index = () => {
   useEffect(() => {
@@ -35,7 +36,8 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
-        <div className="scroll-reveal">
+        <BodyText />
+        <div className="scroll-reveal" style={{ paddingTop: '37.5px' }}>
           <Products />
         </div>
         <div className="scroll-reveal">
