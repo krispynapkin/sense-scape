@@ -34,7 +34,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-brand-forest text-background">
+    <footer className="bg-[#1A2B3C] text-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 py-16">
@@ -44,7 +44,7 @@ const Footer = () => {
               <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
                 <span className="text-primary-foreground font-bold text-xl">B</span>
               </div>
-              <span className="text-2xl font-bold">Blocky Buddy</span>
+              <span className="text-2xl font-bold">Sense Scape</span>
             </div>
             <p className="text-background/80 mb-6 max-w-sm">
               Building tomorrow's thinkers through innovative educational blocks. 

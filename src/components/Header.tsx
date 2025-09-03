@@ -41,11 +41,11 @@ const Header = () => {
             <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
               <span className="text-primary-foreground font-bold text-lg">B</span>
             </div>
-            <span className="text-xl font-bold gradient-text">Blocky Buddy</span>
+            <span className="text-xl font-bold gradient-text">SenseScape</span>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="flex items-center space-x-8">
             <button
               onClick={() => scrollToSection('home')}
               className="text-foreground hover:text-brand-teal transition-colors"

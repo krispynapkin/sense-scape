@@ -6,63 +6,63 @@ const Reviews = () => {
   const reviews = [
     {
       id: 1,
-      name: "Sarah Johnson",
-      role: "Elementary Teacher",
-      school: "Sunshine Elementary",
+      name: "Anjali Mehta",
+      role: "Kindergarten Teacher",
+      school: "Delhi Public School, Noida",
       rating: 5,
-      review: "These blocks have transformed our math and science lessons! The elephant theme keeps the kids engaged while they learn spatial reasoning and problem-solving skills. Absolutely love them!",
+      review: "The learning blocks have made my classroom so much more interactive. Children enjoy hands-on play, and it has really helped them grasp basic concepts quickly.",
       students: 28,
-      grade: "2nd Grade"
+      grade: "Nursery & KG"
     },
     {
       id: 2,
-      name: "Michael Chen",
-      role: "Curriculum Director",
-      school: "Green Valley School District",
+      name: "Ramesh Iyer",
+      role: "Parent",
+      school: "Podar International School, Mumbai (Parent Community)",
       rating: 5,
-      review: "We've implemented Blocky Buddy Blocks across 15 schools in our district. The quality is outstanding, and the educational value is immense. Teachers report increased student engagement by 85%!",
+      review: "I purchased the blocks for my son, and he spends hours building and learning. They’re not only fun but also educational—he’s picking up problem-solving skills without even realizing it.",
       students: 450,
-      grade: "K-5"
+      grade: "Class 1"
     },
     {
       id: 3,
-      name: "Emily Rodriguez",
-      role: "Preschool Teacher",
-      school: "Little Learners Academy",
+      name: "Kavita Nair",
+      role: "Curriculum Coordinator",
+      school: "Amity International School, Gurgaon",
       rating: 5,
-      review: "Perfect for our little ones! The blocks are the perfect size, safe, and so colorful. Children naturally gravitate toward the elephant shapes and spend hours building and creating.",
+      review: "These blocks are an excellent addition to our teaching resources. They encourage creativity, critical thinking, and collaborative play among students.",
       students: 16,
-      grade: "Preschool"
+      grade: "Classes 1-3"
     },
     {
       id: 4,
-      name: "David Thompson",
-      role: "STEM Coordinator",
-      school: "Innovation Middle School",
+      name: "Arjun Menon",
+      role: "Grade 2 Teacher",
+      school: "Vidya Mandir Senior Secondary School, Chennai",
       rating: 4,
-      review: "Great for introducing engineering concepts to middle schoolers. The geometric variety in the tower set allows for complex builds that challenge students' spatial thinking.",
+      review: "I use the blocks during both math and language sessions, and the children are always excited. It’s wonderful to see learning and play come together so seamlessly.",
       students: 120,
-      grade: "6th-8th Grade"
+      grade: "Class 2"
     },
     {
       id: 5,
-      name: "Lisa Park",
-      role: "Special Education Teacher",
-      school: "Riverside Elementary",
+      name: "Sneha Reddy",
+      role: "Preschool Head",
+      school: "EuroKids, Hyderabad",
       rating: 5,
-      review: "These blocks work wonderfully with our special needs students. The tactile experience and visual appeal help with sensory integration and fine motor skill development.",
+      review: "Our preschoolers love the learning blocks. They not only develop motor skills but also spark imagination and curiosity in every activity.",
       students: 12,
-      grade: "Special Ed"
+      grade: "Pre-Nursery & Nursery"
     },
     {
       id: 6,
-      name: "Robert Williams",
-      role: "Principal",
-      school: "Oakwood Primary",
+      name: "Amitabh Sharma",
+      role: "Parent & PTA Member",
+      school: "St. Xavier’s High School, Jaipur",  
       rating: 5,
-      review: "Best investment we've made for our school! Teachers love them, students love them, and parents are amazed by the creativity their children show at home after using these at school.",
+      review: "As a parent, I’ve seen how engaging these blocks are at home. And as part of the PTA, I strongly recommend them for schools as they add great value to classroom learning.",
       students: 320,
-      grade: "K-3"
+      grade: "Class 4"
     }
   ];
 
@@ -87,7 +87,7 @@ const Reviews = () => {
             <span className="text-sm font-medium text-brand-forest">Teacher Reviews</span>
           </div>
           
-          <h2 className="text-3xl md:text-5xl font-bold mb-6" style={{ color: '#3f5971' }}>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6" style={{ color: '#e76f51' }}>
             Loved by Educators
           </h2>
           
@@ -160,7 +160,7 @@ const Reviews = () => {
 
         {/* CTA */}
         <div className="text-center mt-16">
-          <div className="rounded-2xl p-8 shadow-medium" style={{backgroundColor: '#264653'}}>
+          <div className="rounded-2xl p-8 shadow-medium" style={{ background: 'linear-gradient(135deg, #264653, #3f5971, #616b8c)' }}>
             <h3 className="text-2xl font-bold text-background mb-4">Join Thousands of Happy Educators</h3>
             <p className="text-background/90 mb-6 max-w-2xl mx-auto">
               Experience the difference Blocky Buddy Blocks can make in your classroom. 

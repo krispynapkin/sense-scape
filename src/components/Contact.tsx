@@ -80,7 +80,7 @@ const Contact = () => {
             <span className="text-sm font-medium text-brand-forest">Get in Touch</span>
           </div>
           
-          <h2 className="text-3xl md:text-5xl font-bold mb-6" style={{ color: '#3f5971' }}>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6" style={{ color: '#e76f51' }}>
             Let’s Build Spaces That Inspire Wonder.
           </h2>
           
@@ -176,21 +176,21 @@ const Contact = () => {
           <div className="space-y-6">
             <Card className="bg-gradient-hero border-0 text-background">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-4">Why Choose SenseScape?</h3>
+                <h3 className="text-2xl font-bold mb-4 text-black">Why Choose SenseScape?</h3>
                 <ul className="space-y-3">
-                  <li className="flex items-center">
+                  <li className="flex items-center text-[#454545]">
                     <div className="w-2 h-2 bg-background rounded-full mr-3"></div>
                     Enhances parent perception & school admissions.
                   </li>
-                  <li className="flex items-center">
+                  <li className="flex items-center text-[#454545]">
                     <div className="w-2 h-2 bg-background rounded-full mr-3"></div>
                     Creates unique, high-quality environments that set your school apart.
                   </li>
-                  <li className="flex items-center">
+                  <li className="flex items-center text-[#454545]">
                     <div className="w-2 h-2 bg-background rounded-full mr-3"></div>
                     Supports multiple areas of child development through sensory, play-based learning.
                   </li>
-                  <li className="flex items-center">
+                  <li className="flex items-center text-[#454545]">
                     <div className="w-2 h-2 bg-background rounded-full mr-3"></div>
                     Offers a one-stop solution for materials, training, and consultancy.
                   </li>

@@ -7,7 +7,7 @@ const BodyText = () => {
   return (
     <section className="py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-5xl font-extrabold mb-6" style={{ color: '#3f5971' }}>
+        <h2 className="text-5xl font-extrabold mb-6" style={{ color: '#e76f51' }}>
           Why Your School Needs More Than Classrooms
         </h2>
         <p className="text-lg max-w-3xl mx-auto" style={{ color: '#454545' }}>

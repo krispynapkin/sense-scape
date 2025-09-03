@@ -18,9 +18,9 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80 shadow-soft hover:shadow-medium",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        hero: "bg-gradient-primary text-primary-foreground hover:scale-105 shadow-medium hover:shadow-strong font-semibold btn-bounce",
-        play: "bg-brand-orange text-foreground hover:bg-brand-orange/90 shadow-soft hover:shadow-medium hover:scale-105 font-medium",
-        learn: "bg-gradient-primary text-primary-foreground shadow-soft hover:shadow-medium",
+        hero: "bg-gradient-primary text-[#fefae0] hover:scale-105 shadow-medium hover:shadow-strong font-semibold btn-bounce",
+        play: "bg-gradient-primary text-[#fefae0] shadow-soft hover:shadow-medium hover:scale-105 font-medium",
+        learn: "bg-gradient-primary text-[#fefae0] shadow-soft hover:shadow-medium",
       },
       size: {
         default: "h-10 px-4 py-2",

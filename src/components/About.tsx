@@ -38,7 +38,7 @@ const About = () => {
             <span className="text-sm font-medium text-brand-forest">Our Story</span>
           </div>
           
-          <h2 className="text-3xl md:text-5xl font-bold mb-6" style={{ color: '#3f5971' }}>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6" style={{ color: '#e76f51' }}>
             Building Tomorrow's Thinkers
           </h2>
           
@@ -49,7 +49,7 @@ const About = () => {
         </div>
 
         {/* Mission Statement */}
-        <div className="border border-border rounded-2xl p-8 md:p-12 mb-16 shadow-medium" style={{backgroundColor: '#264653'}}>
+        <div className="border border-border rounded-2xl p-8 md:p-12 mb-16 shadow-medium" style={{ background: 'linear-gradient(135deg, #264653, #3f5971, #616b8c)' }}>
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-3xl font-medium mb-6 text-white">Our Mission</h3>
@@ -104,7 +104,7 @@ const About = () => {
 
         {/* CTA */}
         <div className="text-center">
-          <div className="rounded-2xl p-8 shadow-medium" style={{backgroundColor: '#264653'}}>
+          <div className="rounded-2xl p-8 shadow-medium" style={{ background: 'linear-gradient(135deg, #264653, #3f5971, #616b8c)' }}>
             <h3 className="text-3xl font-bold text-background mb-4">Ready to Join Our Mission?</h3>
             <p className="text-background/90 mb-6 max-w-2xl mx-auto">
               Partner with us to bring innovative learning experiences to your students. 

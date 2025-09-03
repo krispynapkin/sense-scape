@@ -12,7 +12,7 @@ const Hero = () => {
   return (
     <section id="home" className="relative flex items-center justify-center overflow-hidden" style={{ height: '900px' }}>
       {/* Background */}
-      <div className="absolute inset-0 bg-[#264653]"></div>
+     <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, #264653, #3f5971, #616b8c)' }}></div>
       
       {/* Floating Elements */}
       <div className="absolute top-20 left-10 w-16 h-16 bg-brand-orange/20 rounded-full blur-xl float-animation"></div>
@@ -66,8 +66,8 @@ const Hero = () => {
                 size="xl"
                 onClick={() => scrollToSection('contact')}
               >
-                <Play className="w-5 h-5 mr-2" />
-                Watch Demo
+                <Play className="w-5 h-5 mr-2 text-[#fefae0]" />
+                <span className="text-[#fefae0]">Watch Demo</span>
               </Button>
             </div>
           </div>
@@ -75,9 +75,9 @@ const Hero = () => {
           {/* Hero Image */}
           <div className="relative">
             <img 
-              src="/images/hero/cut-out-effect.png" 
-              alt="Abstract paper cutout effect in shades of teal" 
-              className="w-full h-auto"
+              src="/images/hero/product-elephant.jpg" 
+              alt="Child PLaying With Blocks" 
+              className="w-100 h-100 rounded-full object-cover mx-auto"
             />
           </div>
         </div>

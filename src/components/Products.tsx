@@ -70,7 +70,7 @@ const Products = () => {
             <span className="text-sm font-medium text-brand-forest">Our Products</span>
           </div>
           
-          <h2 className="text-3xl md:text-5xl font-bold mb-6" style={{ color: '#3f5971' }}>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6" style={{ color: '#e76f51' }}>
             Educational Building Sets
           </h2>
           
@@ -224,7 +224,7 @@ const Products = () => {
 
         {/* CTA Section */}
         <div className="text-center mt-16">
-          <div className="border border-border rounded-2xl p-8 shadow-medium" style={{backgroundColor: '#264653'}}>
+          <div className="border border-border rounded-2xl p-8 shadow-medium" style={{ background: 'linear-gradient(135deg, #264653, #3f5971, #616b8c)' }}>
             <h3 className="text-2xl font-bold mb-4 text-white">Need Help Choosing?</h3>
             <p className="text-white mb-6">
               Our education specialists can help you find the perfect set for your classroom needs.
