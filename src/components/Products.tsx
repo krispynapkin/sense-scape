@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ShoppingCart, Star, Users, Building, ChevronDown, ChevronUp } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { ShoppingCart, Star, Users, Building, ChevronDown, ChevronUp, Eye, Heart } from "lucide-react";
+import { useCartStore } from "@/stores/cartStore";
 import productClassroom from "@/assets/product-classroom.jpg";
 import productIntermediate from "@/assets/product-multipack.jpg";
 import productStarter from "@/assets/product-starter.jpg";
@@ -9,6 +11,105 @@ import productColoured from "@/assets/product-coloured.jpg";
 
 const Products = () => {
   const [showAll, setShowAll] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [wishlist, setWishlist] = useState(new Set());
+  const addItem = useCartStore((state) => state.addItem);
+
+  const toggleWishlist = (productId) => {
+    setWishlist(prev => {
+      const newWishlist = new Set(prev);
+      if (newWishlist.has(productId)) {
+        newWishlist.delete(productId);
+      } else {
+        newWishlist.add(productId);
+      }
+      return newWishlist;
+    });
+  };
+
+  const ProductQuickView = ({ product, isOpen, onClose }) => (
+    <Dialog open={isOpen} onOpenChange={onClose}>
+      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+        <DialogHeader>
+          <DialogTitle className="text-2xl">{product.name}</DialogTitle>
+        </DialogHeader>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="space-y-4">
+            <img 
+              src={product.image} 
+              alt={product.name}
+              className="w-full h-96 object-cover rounded-lg"
+            />
+            <div className="grid grid-cols-4 gap-2">
+              {[product.image, product.image, product.image, product.image].map((img, idx) => (
+                <img key={idx} src={img} alt="" className="w-full h-20 object-cover rounded cursor-pointer hover:opacity-75" />
+              ))}
+            </div>
+          </div>
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-2">
+                <span className="text-3xl font-bold text-brand-forest">{product.price}</span>
+                <span className="text-lg text-muted-foreground line-through">{product.originalPrice}</span>
+                <span className="text-sm font-medium text-brand-orange bg-orange-100 px-2 py-1 rounded">
+                  Save {Math.round(((parseFloat(product.originalPrice.replace('₹', '')) - parseFloat(product.price.replace('₹', ''))) / parseFloat(product.originalPrice.replace('₹', ''))) * 100)}%
+                </span>
+              </div>
+              <div className="flex items-center space-x-1">
+                <Star className="w-5 h-5 fill-brand-orange text-brand-orange" />
+                <span className="font-medium">{product.rating}</span>
+              </div>
+            </div>
+            
+            <p className="text-muted-foreground">{product.description}</p>
+            
+            <div className="space-y-3">
+              <h4 className="font-semibold">Key Features:</h4>
+              <div className="grid grid-cols-1 gap-2">
+                {product.features.map((feature, idx) => (
+                  <div key={idx} className="flex items-center text-sm">
+                    <div className="w-2 h-2 bg-brand-teal rounded-full mr-3"></div>
+                    {feature}
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div className="flex items-center p-3 bg-muted/50 rounded-lg">
+              <Users className="w-5 h-5 mr-3 text-brand-teal" />
+              <span className="font-medium">Perfect for {product.students} students</span>
+            </div>
+            
+            <div className="flex gap-3 pt-4">
+              <Button 
+                className="flex-1" 
+                size="lg"
+                onClick={() => addItem({
+                  id: product.id,
+                  name: product.name,
+                  price: product.price,
+                  originalPrice: product.originalPrice,
+                  image: product.image
+                })}
+              >
+                <ShoppingCart className="w-5 h-5 mr-2" />
+                Add to Cart
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg"
+                onClick={() => toggleWishlist(product.id)}
+                className={wishlist.has(product.id) ? "text-red-500 border-red-500" : ""}
+              >
+                <Heart className={`w-5 h-5 ${wishlist.has(product.id) ? "fill-current" : ""}`} />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </DialogContent>
+    </Dialog>
+  );
+
   const products = [
     {
       id: 1,
@@ -25,7 +126,7 @@ const Products = () => {
     {
       id: 2,
       name: "Intermediate Collection",
-      description: "Advanced A wider variety of shapes and sizes — arches, cylinders, triangles — to encourage more complex creations and storytelling. Ideal for children ready to move beyond basics. set with 50 geometric blocks for complex structures. Great for problem-solving skills.",
+      description: "Advanced set with 50 geometric blocks for complex structures. Great for problem-solving skills.",
       price: "₹4500",
       originalPrice: "₹5000",
       image: productIntermediate,
@@ -83,10 +184,10 @@ const Products = () => {
         {/* Products Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.slice(0, 3).map((product) => (
-            <Card key={product.id} className="card-hover group relative overflow-hidden">
+            <Card key={product.id} className="card-hover group relative overflow-hidden hover:shadow-2xl transition-all duration-300">
               {product.bestseller && (
                 <div className="absolute top-4 left-4 z-10">
-                  <div className="bg-brand-orange text-foreground px-3 py-1 rounded-full text-sm font-semibold">
+                  <div className="bg-brand-orange text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
                     Bestseller
                   </div>
                 </div>
@@ -97,26 +198,46 @@ const Products = () => {
                   <img 
                     src={product.image} 
                     alt={product.name}
-                    className="w-full h-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full aspect-square object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  
+                  {/* Quick actions overlay */}
+                  <div className="absolute top-4 right-4 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <Button 
+                      size="sm" 
+                      variant="secondary" 
+                      className="w-8 h-8 p-0 bg-white/90 hover:bg-white"
+                      onClick={() => setSelectedProduct(product)}
+                    >
+                      <Eye className="w-4 h-4" />
+                    </Button>
+                    <Button 
+                      size="sm" 
+                      variant="secondary" 
+                      className={`w-8 h-8 p-0 bg-white/90 hover:bg-white ${wishlist.has(product.id) ? "text-red-500" : ""}`}
+                      onClick={() => toggleWishlist(product.id)}
+                    >
+                      <Heart className={`w-4 h-4 ${wishlist.has(product.id) ? "fill-current" : ""}`} />
+                    </Button>
+                  </div>
                 </div>
               </CardHeader>
               
               <CardContent className="p-6">
                 <div className="flex items-center justify-between mb-2">
-                  <CardTitle className="text-xl font-bold">{product.name}</CardTitle>
+                  <CardTitle className="text-xl font-bold group-hover:text-brand-forest transition-colors">{product.name}</CardTitle>
                   <div className="flex items-center space-x-1">
                     <Star className="w-4 h-4 fill-brand-orange text-brand-orange" />
                     <span className="text-sm font-medium">{product.rating}</span>
                   </div>
                 </div>
                 
-                <p className="text-muted-foreground mb-4">{product.description}</p>
+                <p className="text-muted-foreground mb-4 line-clamp-2">{product.description}</p>
                 
                 {/* Features */}
                 <div className="grid grid-cols-2 gap-2 mb-4">
-                  {product.features.map((feature, idx) => (
+                  {product.features.slice(0, 2).map((feature, idx) => (
                     <div key={idx} className="flex items-center text-sm text-muted-foreground">
                       <div className="w-2 h-2 bg-brand-teal rounded-full mr-2"></div>
                       {feature}
@@ -141,10 +262,30 @@ const Products = () => {
                   </div>
                 </div>
                 
-                <Button variant="hero" className="w-full">
-                  <ShoppingCart className="w-4 h-4 mr-2" />
-                  Add to Cart
-                </Button>
+                <div className="flex gap-2">
+                  <Button 
+                    variant="hero" 
+                    className="flex-1"
+                    onClick={() => addItem({
+                      id: product.id,
+                      name: product.name,
+                      price: product.price,
+                      originalPrice: product.originalPrice,
+                      image: product.image
+                    })}
+                  >
+                    <ShoppingCart className="w-4 h-4 mr-2" />
+                    Add to Cart
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    size="icon"
+                    onClick={() => setSelectedProduct(product)}
+                    className="shrink-0"
+                  >
+                    <Eye className="w-4 h-4" />
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           ))}
@@ -207,7 +348,17 @@ const Products = () => {
                   </div>
                 </div>
                 
-                <Button variant="hero" className="w-full">
+                <Button 
+                  variant="hero" 
+                  className="w-full"
+                  onClick={() => addItem({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    originalPrice: product.originalPrice,
+                    image: product.image
+                  })}
+                >
                   <ShoppingCart className="w-4 h-4 mr-2" />
                   Add to Cart
                 </Button>
@@ -235,6 +386,15 @@ const Products = () => {
           </div>
         </div>
       </div>
+
+      {/* Quick View Modal */}
+      {selectedProduct && (
+        <ProductQuickView 
+          product={selectedProduct} 
+          isOpen={!!selectedProduct} 
+          onClose={() => setSelectedProduct(null)} 
+        />
+      )}
     </section>
   );
 };
